@@ -8,7 +8,7 @@
 module.exports = {
 
   attributes: {
-    student_id: {
+    instructor_id: {
       type: 'integer',
       primaryKey: true,
       autoIncrement: true
@@ -23,25 +23,16 @@ module.exports = {
       minLength: 2,
       maxLength: 30
     },
-    gpa: {
-      type: 'decimal',
-    },
-    sat: {
-      type: 'integer',
-      maxLength: 4
-    },
     major_id: {
+      type: 'integer'
+    },
+    years_of_experience: {
       type: 'integer',
+      maxLength: 2
     },
-    start_date: {
-      type: 'date'
-    },
-    toJSON: function() {
-      var obj = this.toObject();
-      if(obj.start_date){
-       obj.start_date = obj.start_date.slice(0,-14);
-     }
-      return obj;
+    tenured: {
+      type: 'integer',
+      maxLength: 1
     }
   },
   autoPK: false
